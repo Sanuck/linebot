@@ -31,8 +31,9 @@ if ( sizeof($request_array['events']) > 0 ) {
         
         $data = [
             'replyToken' => $reply_token,
+            'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
 //            'messages' => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
-           'messages' => [['type' => 'text', 'text' => $text ]]
+//            'messages' => [['type' => 'text', 'text' => $text ]]
 //             'messages' => 'Data'
         ];
         
