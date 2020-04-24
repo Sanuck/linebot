@@ -21,14 +21,19 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
 
         $text = $event['message']['text'];
-        $data = [
-            'replyToken' => $reply_token,
-             'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]] 
-            //'messages' => [['type' => 'text', 'text' => $text ]]
-        ];
-        $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
+        if($text == 'even'){
+            $text_test = '5555';
+        }else{
+            $text_test = '0000';   
+        }
+        // $data = [
+        //     'replyToken' => $reply_token,
+        //     'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]] 
+        //     // 'messages' => [['type' => 'text', 'text' => $text ]]
+        // ];
+        $post_body = json_encode($text_test, JSON_UNESCAPED_UNICODE);
 
-        $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $text);
+        $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
 
         echo "Result: ".$send_result."\r\n";
     }
@@ -36,7 +41,15 @@ if ( sizeof($request_array['events']) > 0 ) {
 
 echo "OK";
 
-
+{"events":
+    [ 
+        {"type":"message","replyToken":"fb9c7fd69ea94c899f8b3eee310bb4f4", 
+            "source":{"userId":"U1a7e5034f3c27cd6526ea186b77d3138","type":"user"},
+            "timestamp":1587710430978,"mode":"active",
+            "message":{"type":"text","id":"11844130639935","text":"Hi"}
+        }
+    ],"destination":"U7581820a5898b594bb0196cb81b196a4"
+ }
 
 
 function send_reply_message($url, $post_header, $post_body)
