@@ -21,10 +21,12 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
 
         $text = $event['message']['text'];
-        if($text == 'เงิน'){
-            $text_test = 'ยอดเงินคงเหลือ 3000';
+        if($text == 'สมัครฮิดี้'){
+            $text_test = 'เข้าเว็บดิไอสัส';
+        }else if($text == 'แลเบี้ยฮิดดี้'){
+            $text_test = 'หมดตูดแล้วไอสัส';   
         }else{
-            $text_test = 'พิมพ์ว่าเงินดิไอสัส';   
+            $text_test = 'กรณาเลือกจากเมนูค่ะ';
         }
         $data = [
             'replyToken' => $reply_token,
