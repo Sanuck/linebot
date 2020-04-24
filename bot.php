@@ -31,8 +31,8 @@ if ( sizeof($request_array['events']) > 0 ) {
         
         $data = [
             'replyToken' => $reply_token,
-            $user_id => [['message' => 'type', 'text' => json_encode($request_array) ]] //
-            'messages' => $user_id//[['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
+            $user_id = [['message' => 'type', 'text' => json_encode($request_array) ]] //
+            'messages' = $user_id//[['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
         ];
         
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
