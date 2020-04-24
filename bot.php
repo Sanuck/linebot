@@ -22,22 +22,25 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $text = $event['message']['text'];
         if($text == 'สมัครฮิดี้'){
+            
         $data = [
             'replyToken' => $reply_token,
             'messages' => [['source' => 'userId', 'text' => json_encode($request_array) ]] //
             // 'messages' => [['type' => 'text', 'text' => $text ]]
         ];
+        $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
+
+        $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
+
+        echo "Result: ".$send_result."\r\n";
+            
         }else if($text == 'แลเบี้ยฮิดดี้'){
             $text_test = 'หมดตูดแล้วไอสัส';   
         }else{
             $text_test = 'กรณาเลือกจากเมนูค่ะ';
         }
         
-        $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
 
-        $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
-
-        echo "Result: ".$send_result."\r\n";
     }
 }
 
