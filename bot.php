@@ -21,10 +21,10 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
 
         $text = $event['message']['text'];
-        if($text == 'event'){
-            $text_test = '5555';
+        if($text == 'เงิน'){
+            $text_test = 'ยอดเงินคงเหลือ 3000';
         }else{
-            $text_test = '0000';   
+            $text_test = 'พิมพ์ว่าเงินดิไอสัส';   
         }
         $data = [
             'replyToken' => $reply_token,
