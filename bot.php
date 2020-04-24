@@ -22,11 +22,11 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $text = $event['message']['text'];
         if($text == 'สมัครฮิดี้'){
-             $data = [
+        $data = [
             'replyToken' => $reply_token,
             'messages' => [['source' => 'userId', 'text' => json_encode($request_array) ]] //
             // 'messages' => [['type' => 'text', 'text' => $text ]]
-            ];
+        ];
         }else if($text == 'แลเบี้ยฮิดดี้'){
             $text_test = 'หมดตูดแล้วไอสัส';   
         }else{
