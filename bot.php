@@ -21,7 +21,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
 
         $text = $event['message']['text'];
-        if($text == 'even'){
+        if($text == 'event'){
             $text_test = '5555';
         }else{
             $text_test = '0000';   
