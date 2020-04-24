@@ -41,15 +41,15 @@ if ( sizeof($request_array['events']) > 0 ) {
 
 echo "OK";
 
-{"events":
-    [ 
-        {"type":"message","replyToken":"fb9c7fd69ea94c899f8b3eee310bb4f4", 
-            "source":{"userId":"U1a7e5034f3c27cd6526ea186b77d3138","type":"user"},
-            "timestamp":1587710430978,"mode":"active",
-            "message":{"type":"text","id":"11844130639935","text":"Hi"}
-        }
-    ],"destination":"U7581820a5898b594bb0196cb81b196a4"
- }
+// {"events":
+//     [ 
+//         {"type":"message","replyToken":"fb9c7fd69ea94c899f8b3eee310bb4f4", 
+//             "source":{"userId":"U1a7e5034f3c27cd6526ea186b77d3138","type":"user"},
+//             "timestamp":1587710430978,"mode":"active",
+//             "message":{"type":"text","id":"11844130639935","text":"Hi"}
+//         }
+//     ],"destination":"U7581820a5898b594bb0196cb81b196a4"
+//  }
 
 
 function send_reply_message($url, $post_header, $post_body)
