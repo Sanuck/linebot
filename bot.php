@@ -26,12 +26,12 @@ if ( sizeof($request_array['events']) > 0 ) {
         }else{
             $text_test = '0000';   
         }
-        // $data = [
-        //     'replyToken' => $reply_token,
-        //     'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]] 
-        //     // 'messages' => [['type' => 'text', 'text' => $text ]]
-        // ];
-        $post_body = json_encode($text_test, JSON_UNESCAPED_UNICODE);
+        $data = [
+            'replyToken' => $reply_token,
+            'messages' => [['type' => 'text', 'text' => $text_test ]] 
+            // 'messages' => [['type' => 'text', 'text' => $text ]]
+        ];
+        $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
 
         $send_result = send_reply_message($API_URL.'/reply', $POST_HEADER, $post_body);
 
