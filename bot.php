@@ -55,9 +55,9 @@ if ( sizeof($request_array['events']) > 0 ) {
             'replyToken' => $reply_token,
 //             'messages' => [['message' => 'type', 'text' => json_encode($request_array) ]] //
             $user_id => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
-            if($user_id == 'U1a7e5034f3c27cd6526ea186b77d3138' || $user_id == '"U1a7e5034f3c27cd6526ea186b77d3138"'){
-                'messages' => [['type' => 'text', 'text' => $text_test ]]
-            }
+//             if($user_id == 'U1a7e5034f3c27cd6526ea186b77d3138' || $user_id == '"U1a7e5034f3c27cd6526ea186b77d3138"'){
+                'messages' => [['type' => 'text', 'text' => $user_id ]]
+//             }
         ];
         
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
