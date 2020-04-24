@@ -21,13 +21,13 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
 
         $text = $event['message']['text'];
-        if($text == 'สมัครฮิดี้'){
-            $text_test = 'สมัครฮิดี้';  
-        }else if($text == 'แลเบี้ยฮิดดี้'){
-            $text_test = 'แลเบี้ยฮิดดี้';   
-        }else{
-            $text_test = 'กรณาเลือกจากเมนูค่ะ';
-        }
+//         if($text == 'สมัครฮิดี้'){
+//             $text_test = 'สมัครฮิดี้';  
+//         }else if($text == 'แลเบี้ยฮิดดี้'){
+//             $text_test = 'แลเบี้ยฮิดดี้';   
+//         }else{
+//             $text_test = 'กรณาเลือกจากเมนูค่ะ';
+//         }
         
         $data = [
             'replyToken' => $reply_token,
