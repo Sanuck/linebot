@@ -32,7 +32,10 @@ if ( sizeof($request_array['events']) > 0 ) {
                'messages' => [['type' => 'text', 'text' => 'คุณเป็นเกษตรกรค่ะ' ]]
             ];
         }else{
-            $text_test = 'พิมพ์ได้แค่ (สมัคร) กับ (เช็คยอดเงิน)';
+             $data = [
+                'replyToken' => $reply_token,
+               'messages' => [['type' => 'text', 'text' => 'พิมพ์ได้แค่ (สมัคร) กับ (เช็คยอดเงิน)' ]]
+            ];
         }
         
 //         $data = [
