@@ -34,11 +34,11 @@ if ( sizeof($request_array['events']) > 0 ) {
         }else if($text == '.'){
             $data = [
                'replyToken' => $reply_token,
-           'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
+               'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
             ];
         }else{
              $data = [
-                'replyToken' => $reply_token,
+               'replyToken' => $reply_token,
                'messages' => [['type' => 'text', 'text' => 'พิมพ์ได้แค่ (สมัคร) กับ (เช็คยอดเงิน)' ]]
             ];
         }
