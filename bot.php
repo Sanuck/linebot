@@ -22,22 +22,17 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $text = $event['message']['text'];
         if($text == 'สมัคร'){
-//             $text_test = 'สมัครที่เว็บไซต์ www.เราไม่ให้เงิน5000.com ค่ะ';
-             $data = [
-            'replyToken' => $reply_token,
-//            'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
-           'messages' => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
-//            'messages' => [['type' => 'text', 'text' => $text_test ]]
-        ];
-//             'messages' => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
+            $data = [
+               'replyToken' => $reply_token,
+               'messages' => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
+            ];
         }else if($text == 'เช็คยอดเงิน'){
-            $text_test = 'คุณเป็นเกษตรกรค่ะ';   
-             $data = [
-            'replyToken' => $reply_token,
-           'messages' => [['type' => 'text', 'text' => $text_test ]]
-        ];
+            $data = [
+               'replyToken' => $reply_token,
+               'messages' => [['type' => 'text', 'text' => 'คุณเป็นเกษตรกรค่ะ' ]]
+            ];
         }else{
-            $text_test = 'กรณาเลือกจากเมนูค่ะ';
+            $text_test = 'พิมพ์ได้แค่ (สมัคร) กับ (เช็คยอดเงิน)';
         }
         
 //         $data = [
