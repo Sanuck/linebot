@@ -22,17 +22,10 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $text = $event['message']['text'];
         if($text == 'สมัคร'){
-            $data = [
-               'replyToken' => $reply_token,
-               'messages' => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
-            ];
-            
-            if($text == 'กรอก Username'){
-                $data = [
-                   'replyToken' => $reply_token,
-                   'messages' => [['type' => 'text', 'text' => $text]]
-                ];
-            }
+//             $data = [
+//                'replyToken' => $reply_token,
+//                'messages' => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
+//             ];
         }else if($text == 'เช็คยอดเงิน'){
             $data = [
                'replyToken' => $reply_token,
@@ -43,7 +36,13 @@ if ( sizeof($request_array['events']) > 0 ) {
                'replyToken' => $reply_token,
                'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
             ];
-        }else{
+        }else if (is_numeric($text)){
+             $data = [
+               'replyToken' => $reply_token,
+               'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
+            ];
+        }
+        else{
              $data = [
                'replyToken' => $reply_token,
                'messages' => [['type' => 'text', 'text' => 'พิมพ์ได้แค่ (สมัคร) กับ (เช็คยอดเงิน)' ]]
