@@ -26,6 +26,13 @@ if ( sizeof($request_array['events']) > 0 ) {
                'replyToken' => $reply_token,
                'messages' => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
             ];
+            
+            if($text == 'กรอก Username'){
+                $data = [
+                   'replyToken' => $reply_token,
+                   'messages' => [['type' => 'text', 'text' => $text]]
+                ];
+            }
         }else if($text == 'เช็คยอดเงิน'){
             $data = [
                'replyToken' => $reply_token,
