@@ -39,7 +39,7 @@ if ( sizeof($request_array['events']) > 0 ) {
         }else if (is_numeric($text)){
              $data = [
                'replyToken' => $reply_token,
-               'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
+               'messages' => [['type' => 'text', 'text' => 'กำลังดำเนินการถอนเงิน' ]]
             ];
         }
         else{
