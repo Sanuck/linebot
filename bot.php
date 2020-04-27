@@ -21,19 +21,19 @@ if ( sizeof($request_array['events']) > 0 ) {
         $reply_token = $event['replyToken'];
 
         $text = $event['message']['text'];
-//         if($text == 'สมัครฮิดี้'){
-//             $text_test = 'สมัครฮิดี้';  
-//         }else if($text == 'แลเบี้ยฮิดดี้'){
-//             $text_test = 'แลเบี้ยฮิดดี้';   
-//         }else{
-//             $text_test = 'กรณาเลือกจากเมนูค่ะ';
-//         }
+        if($text == 'สมัคร'){
+            $text_test = 'สมัครที่เว็บไซต์ www.เราไม่ให้เงิน5000.com ค่ะ';  
+        }else if($text == 'เช็คยอดเงิน'){
+            $text_test = 'คุณเป็นเกษตรกรค่ะ';   
+        }else{
+            $text_test = 'กรณาเลือกจากเมนูค่ะ';
+        }
         
         $data = [
             'replyToken' => $reply_token,
 //             'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
-           'messages' => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
-//            'messages' => [['type' => 'text', 'text' => $text ]]
+//            'messages' => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
+           'messages' => [['type' => 'text', 'text' => $text_test ]]
 //             'messages' => 'Data'
         ];
         
