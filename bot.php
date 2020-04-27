@@ -22,8 +22,8 @@ if ( sizeof($request_array['events']) > 0 ) {
 
         $text = $event['message']['text'];
         if($text == 'สมัคร'){
-         $text_test = 'สมัครที่เว็บไซต์ www.เราไม่ให้เงิน5000.com ค่ะ'; 
-//             $text_test = [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
+            $text_test = 'สมัครที่เว็บไซต์ www.เราไม่ให้เงิน5000.com ค่ะ'; 
+            // $text_test = [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
         }else if($text == 'เช็คยอดเงิน'){
             $text_test = 'คุณเป็นเกษตรกรค่ะ';   
         }else{
@@ -32,10 +32,9 @@ if ( sizeof($request_array['events']) > 0 ) {
         
         $data = [
             'replyToken' => $reply_token,
-//             'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
+//            'messages' => [['type' => 'text', 'text' => json_encode($request_array) ]]
 //            'messages' => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
            'messages' => [['type' => 'text', 'text' => $text_test ]]
-//             'messages' => 'Data'
         ];
         
         $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
