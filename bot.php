@@ -41,8 +41,12 @@ if ( sizeof($request_array['events']) > 0 ) {
                'replyToken' => $reply_token,
                'messages' => [['type' => 'text', 'text' => 'กำลังดำเนินการถอนเงิน' ]]
             ];
-        }
-        else{
+        }else if($text == 'ตรวจสอบข้อมูล'){
+            $data = [
+               'replyToken' => $reply_token,
+               'messages' => [['type' => 'text', 'text' => json_encode($event['source']['userId']) ]]
+            ];
+        }else{
              $data = [
                'replyToken' => $reply_token,
                'messages' => [['type' => 'text', 'text' => 'พิมพ์ได้แค่ (สมัคร) กับ (เช็คยอดเงิน)' ]]
